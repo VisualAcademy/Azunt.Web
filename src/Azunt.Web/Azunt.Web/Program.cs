@@ -4,6 +4,8 @@ using Azunt.Web.Data;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
+using Serilog.Sinks.MSSqlServer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +39,42 @@ builder.Services.AddIdentityCore<ApplicationUser>(options =>
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+
+#region Serilog
+// 1. Serilog 컬럼 옵션 정의
+var columnOptions = new ColumnOptions
+{
+    Store = new List<StandardColumn>
+    {
+        StandardColumn.Message,
+        StandardColumn.MessageTemplate,
+        StandardColumn.Level,
+        StandardColumn.TimeStamp,
+        StandardColumn.Exception,
+        StandardColumn.Properties
+    }
+};
+
+// 2. Serilog 로거 구성
+Serilog.Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.Console()
+    .WriteTo.MSSqlServer(
+        connectionString: builder.Configuration.GetConnectionString("DefaultConnection"),
+        sinkOptions: new MSSqlServerSinkOptions
+        {
+            TableName = "AppLogs",
+            AutoCreateSqlTable = true
+        },
+        restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Error,
+        columnOptions: columnOptions
+    )
+    .Enrich.FromLogContext()
+    .CreateLogger();
+
+// 3. ASP.NET Core 로깅 시스템에 Serilog를 등록
+builder.Host.UseSerilog();
+#endregion
 
 var app = builder.Build();
 
