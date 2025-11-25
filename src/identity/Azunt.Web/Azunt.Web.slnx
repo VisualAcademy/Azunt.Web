@@ -1,7 +1,3 @@
 <Solution>
-  <Project Path="Azunt.SqlServer/Azunt.SqlServer.sqlproj">
-    <Build />
-    <Deploy />
-  </Project>
   <Project Path="Azunt.Web/Azunt.Web.csproj" />
 </Solution>
