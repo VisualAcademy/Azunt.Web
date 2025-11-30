@@ -19,8 +19,4 @@
     <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="9.0.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>
