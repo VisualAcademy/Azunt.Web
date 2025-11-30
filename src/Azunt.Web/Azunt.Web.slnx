@@ -1,3 +1,7 @@
 <Solution>
+  <Project Path="Azunt.SqlServer/Azunt.SqlServer.sqlproj" Id="7ea0bedb-c2cd-4e26-a322-67af18a3eb45">
+    <Build />
+    <Deploy />
+  </Project>
   <Project Path="Azunt.Web/Azunt.Web.csproj" />
 </Solution>
