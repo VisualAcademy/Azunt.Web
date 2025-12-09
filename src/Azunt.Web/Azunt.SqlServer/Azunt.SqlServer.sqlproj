@@ -65,5 +65,6 @@
     <Build Include="dbo\Tables\Refunds.sql" />
     <Build Include="dbo\Tables\Categories.sql" />
     <Build Include="dbo\Tables\Devices.sql" />
+    <Build Include="dbo\Tables\Customers.sql" />
   </ItemGroup>
 </Project>
