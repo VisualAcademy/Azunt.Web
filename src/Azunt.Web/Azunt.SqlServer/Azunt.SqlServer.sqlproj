@@ -66,5 +66,6 @@
     <Build Include="dbo\Tables\Categories.sql" />
     <Build Include="dbo\Tables\Devices.sql" />
     <Build Include="dbo\Tables\Customers.sql" />
+    <Build Include="dbo\Tables\InvoiceNumberSequences.sql" />
   </ItemGroup>
 </Project>
