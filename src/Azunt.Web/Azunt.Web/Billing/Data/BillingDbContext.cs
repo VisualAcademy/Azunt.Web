@@ -1,7 +1,7 @@
 ﻿using Azunt.Web.Billing.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Azunt.Web.Billing;
+namespace Azunt.Web.Billing.Data;
 
 public class BillingDbContext : DbContext
 {
