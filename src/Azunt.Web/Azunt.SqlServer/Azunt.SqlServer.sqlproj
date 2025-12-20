@@ -70,5 +70,6 @@
     <Build Include="dbo\Tables\Invoices.sql" />
     <Build Include="dbo\Tables\InvoiceItems.sql" />
     <Build Include="dbo\Tables\InvoiceItemTemplates.sql" />
+    <Build Include="dbo\Tables\Clients.sql" />
   </ItemGroup>
 </Project>
