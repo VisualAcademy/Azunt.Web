@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Azunt.Web.Models
+﻿namespace Azunt.Web.Models
 {
     /// <summary>
     /// Devices 
