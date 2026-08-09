@@ -21,9 +21,9 @@
         <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
         <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="10.0.0" />
 
-        <PackageReference Include="QuestPDF" Version="2026.7.1" />
+        <PackageReference Include="QuestPDF" Version="2026.7.2" />
 
-        <PackageReference Include="Stripe.net" Version="52.1.1" />
+        <PackageReference Include="Stripe.net" Version="52.2.0" />
 
         <PackageReference Include="Azure.Storage.Blobs" Version="12.29.1" />
     </ItemGroup>
